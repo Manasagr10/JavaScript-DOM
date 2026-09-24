@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mobile Menu</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: #f1f5f9;
+        }
+
+        header {
+            background: #0f172a;
+            color: white;
+            padding: 18px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        #menuBtn {
+            background: #38bdf8;
+            color: #082f49;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        nav {
+            background: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav a {
+            display: block;
+            padding: 12px;
+            text-decoration: none;
+            color: #0f172a;
+        }
+
+        nav a:hover {
+            background: #e0f2fe;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .content {
+            text-align: center;
+            padding: 80px 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo">MySite</div>
+
+        <button id="menuBtn">Menu ☰</button>
+
+    </header>
+
+    <nav id="menu" class="hide">
+
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+
+    </nav>
+
+    <div class="content">
+
+        <h1>Welcome</h1>
+        <p>Click the Menu button to open or close navigation.</p>
+
+    </div>
+
+    <script>
+        document.getElementById("menuBtn").addEventListener("click", function() {
+
+            document.getElementById("menu").classList.toggle("hide");
+
+        });
+    </script>
+
+</body>
+</html>

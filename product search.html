@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Search</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: #eef2ff;
+        }
+
+        .store {
+            width: 650px;
+            margin: 50px auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #3730a3;
+        }
+
+        #search {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 15px;
+            border: 2px solid #c7d2fe;
+            border-radius: 12px;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .product {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .product h3 {
+            color: #4338ca;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="store">
+
+        <h1>🛒 Product Store</h1>
+
+        <input
+            type="text"
+            id="search"
+            placeholder="Search products..."
+        >
+
+        <div class="products">
+
+            <div class="product">
+                <h3>Laptop</h3>
+                <p>₹55,000</p>
+            </div>
+
+            <div class="product">
+                <h3>Headphones</h3>
+                <p>₹1,500</p>
+            </div>
+
+            <div class="product">
+                <h3>Keyboard</h3>
+                <p>₹2,000</p>
+            </div>
+
+            <div class="product">
+                <h3>Smartphone</h3>
+                <p>₹25,000</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        document.getElementById("search").addEventListener("input", function() {
+
+            let s = this.value.toLowerCase();
+
+            let p = document.querySelectorAll(".product");
+
+            p.forEach(function(x) {
+
+                let n = x.querySelector("h3").textContent.toLowerCase();
+
+                if (n.includes(s)) {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+
+            });
+
+        });
+    </script>
+
+</body>
+</html>

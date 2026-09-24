@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: #1e293b;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            background: white;
+            width: 330px;
+            padding: 35px;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        input {
+            width: 90%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        button {
+            padding: 11px 25px;
+            background: #7c3aed;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+
+        <h2>🔐 Account Login</h2>
+
+        <input type="password" id="pass" placeholder="Enter password">
+
+        <br>
+
+        <button id="show">Show Password</button>
+
+    </div>
+
+    <script>
+        document.getElementById("show").addEventListener("click", function() {
+
+            let p = document.getElementById("pass");
+
+            if (p.type === "password") {
+                p.type = "text";
+                this.textContent = "Hide Password";
+            } else {
+                p.type = "password";
+                this.textContent = "Show Password";
+            }
+
+        });
+    </script>
+
+</body>
+</html>

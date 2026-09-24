@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: linear-gradient(120deg, #ff9a9e, #fad0c4);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            background: white;
+            width: 380px;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            text-align: center;
+            color: #e75480;
+        }
+
+        .input-box {
+            margin: 18px 0;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            box-sizing: border-box;
+            border: 2px solid #eee;
+            border-radius: 10px;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #e75480;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            background: #e75480;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #d43d68;
+        }
+
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            background: #fff0f5;
+            border-radius: 10px;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+
+        <h1>Student Registration</h1>
+
+        <div class="input-box">
+            <label>Student Name</label>
+            <input type="text" id="name" placeholder="Enter your name">
+        </div>
+
+        <div class="input-box">
+            <label>Email Address</label>
+            <input type="email" id="email" placeholder="Enter your email">
+        </div>
+
+        <button id="register">Register Student</button>
+
+        <p id="result">Your details will appear here...</p>
+
+    </div>
+
+    <script>
+        document.getElementById("register").addEventListener("click", function() {
+
+            let n = document.getElementById("name").value;
+            let e = document.getElementById("email").value;
+
+            document.getElementById("result").textContent =
+                "Student: " + n + " | Email: " + e;
+        });
+    </script>
+
+</body>
+</html>

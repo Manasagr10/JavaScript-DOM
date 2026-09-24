@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Tasks</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f0f4f8;
+            margin: 0;
+            padding: 50px;
+        }
+
+        .todo {
+            width: 400px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 18px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        h1 {
+            text-align: center;
+            color: #374151;
+        }
+
+        input {
+            width: 65%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        button {
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background: #10b981;
+            color: white;
+            cursor: pointer;
+        }
+
+        li {
+            margin: 12px 0;
+            padding: 12px;
+            background: #ecfdf5;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="todo">
+
+        <h1>My To-Do List</h1>
+
+        <input type="text" id="task" placeholder="Enter a task">
+
+        <button id="add">Add Task</button>
+
+        <ul id="list"></ul>
+
+    </div>
+
+    <script>
+        document.getElementById("add").addEventListener("click", function() {
+
+            let t = document.getElementById("task").value;
+
+            let li = document.createElement("li");
+
+            li.textContent = t;
+
+            document.getElementById("list").appendChild(li);
+
+            document.getElementById("task").value = "";
+
+        });
+    </script>
+
+</body>
+</html>

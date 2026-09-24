@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Paragraph Colors</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 0;
+            background: #f8fafc;
+        }
+
+        header {
+            background: #312e81;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .content {
+            width: 70%;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 20px;
+            background: #312e81;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>My Article</h1>
+    </header>
+
+    <div class="content">
+
+        <p>Learning web development helps us create interactive websites.</p>
+
+        <p>JavaScript allows a webpage to respond to user actions.</p>
+
+        <p>The DOM allows JavaScript to access and modify HTML elements.</p>
+
+        <button id="colorBtn">Change Text Color</button>
+
+    </div>
+
+    <script>
+        document.getElementById("colorBtn").addEventListener("click", function() {
+
+            let p = document.querySelectorAll("p");
+
+            p.forEach(function(x) {
+                x.style.color = "blue";
+            });
+
+        });
+    </script>
+
+</body>
+</html>
